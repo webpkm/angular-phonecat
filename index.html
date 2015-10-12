@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body>
+<div ng-controller="PhoneListCtrl">
+This is the testing page
+	<h1>{{first_name}} {{$child}}</h1>
+	<input type="text" name="appName" value="appName" ng-model="appName"><br>
+	<button ng-click="sent()">Sent</button>
+	{{appName}}
+	<div ng-controller="ChildCtrl">
+	This is the child controller
+	<input type="text" ng-model="data">
+	<button ng-click="go()">Go</button>
+	</div>
+  <ul>
+	  <li ng-repeat="phone in phones">
+	    <span>{{phone.name}}</span>
+	    <p>
+	      {{phone.snippet}}
+	    </p>
+	  </li>
+  </ul>
+  <hr>
+  <p>Total number of phones: {{phones.length}}</p>
+</div>
+<div ng-controller="UserListCtrl">
+	{{users}}
+	{{name}}
+</div>
+</body>
+</html>
